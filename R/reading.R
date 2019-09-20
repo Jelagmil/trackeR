@@ -280,6 +280,7 @@ readGPX <- function(file,
     names(observations) <- namesToBeUsed[inds!=0]
 
     ## coerce time into POSIXct
+     observations$file <- file
     observations$time <- gsub("[\t\n]", "", observations$time)
     observations$time <- convertTCXTimes2POSIXct(observations$time, timezone = timezone)
 
